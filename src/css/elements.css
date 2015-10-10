@@ -1,0 +1,286 @@
+html {
+  background-color: transparent;
+}
+body {
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: normal;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font-family: 'Times New Roman';
+  color: #2f3e46;
+}
+::selection {
+  text-shadow: none;
+  background-color: highlight;
+  color: highlighttext;
+}
+body,
+div,
+section,
+header,
+figure,
+span,
+strong,
+i,
+em,
+footer,
+main,
+nav,
+img,
+p,
+button,
+input,
+select,
+textarea,
+a,
+li,
+ul {
+  box-sizing: border-box;
+}
+p {
+  font-size: 1em;
+  margin: 0 0 0.5em 0;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-size: 1em;
+  font-weight: bold;
+  font-family: 'Times New Roman';
+}
+blockquote {
+  font-size: 1em;
+  margin: 1em 40px;
+}
+dfn {
+  font-size: 1em;
+  font-style: italic;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+ins {
+  background: #fff;
+  color: #2f3e46;
+  text-decoration: none;
+}
+mark {
+  background: #fff;
+  color: #2f3e46;
+  font-style: italic;
+  font-weight: bold;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, serif;
+  font-family: 'courier new', monospace;
+  font-size: 1em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+q {
+  font-size: 1em;
+  quotes: none;
+}
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+small {
+  font-size: 0.85em;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.45;
+  color: #2f3e46;
+  margin: 0;
+}
+h1 {
+  font-size: 2.75em;
+  font-weight: normal;
+  font-family: 'Times New Roman';
+  color: #0095c8;
+}
+h2 {
+  font-size: 2.25em;
+  font-weight: normal;
+  font-family: 'Times New Roman';
+  color: #0095c8;
+}
+h3 {
+  font-size: 1.5em;
+  font-weight: normal;
+  font-family: 'Times New Roman';
+  color: #0095c8;
+}
+h4 {
+  font-size: 1.1em;
+  font-weight: normal;
+  font-family: 'Times New Roman';
+  color: #0095c8;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+dd {
+  margin: 0 0 0 40px;
+}
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  font-size: 1em;
+  color: #0095c8;
+  text-decoration: none;
+}
+a:hover {
+  color: #0a5488;
+}
+a:focus {
+  outline: thin dotted;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+input[type=button] {
+  font-size: 1em;
+  background-color: #f16522;
+  box-shadow: 0px 2px 0px #d34d0d;
+  border-radius: 4px;
+  font: inherit;
+  letter-spacing: inherit;
+  text-indent: inherit;
+  color: inherit;
+}
+input[type=button]:hover {
+  background-color: #f16522;
+}
+input[type=button]:active {
+  background-color: #d2d6d6;
+  border: 1px solid #9daca9;
+  box-shadow: inset 0 1px rgba(0,0,0,0.1);
+}
+header,
+main,
+footer,
+section {
+  width: 100%;
+  height: auto;
+  display: block;
+  float: left;
+  background-color: transparent;
+}
+header,
+main,
+footer,
+main section {
+  opacity: 1;
+}
+blockquote {
+  width: 90%;
+  background: #f3f5fa;
+  margin-left: 7%;
+  padding: 3%;
+  box-shadow: -4px 0px 0px 0px #297dbc;
+}
+blockquote p {
+  color: #297dbc;
+}
+ol.commentlist {
+  list-style: none;
+}
+ol.commentlist li.comment {
+  border-bottom: 1px dotted #666;
+  padding: 10px;
+}
+ol.commentlist li.comment div.vcard cite.fn {
+  font-style: normal;
+}
+ol.commentlist li.comment div.vcard img.avatar {
+  float: right;
+  margin: 0 0 10px 10px;
+}
+ol.commentlist li.comment div.comment-meta {
+  font-size: 10px;
+}
+ol.commentlist li.comment div.comment-meta a {
+  color: #ccc;
+}
+ol.commentlist li.comment div.reply {
+  font-size: 11px;
+}
+ol.commentlist li.comment div.reply a {
+  font-weight: bold;
+}
+ol.commentlist li.comment ul.children {
+  list-style: none;
+  margin: 10px 0 0;
+}
+ol.commentlist li.comment ul.children li.depth-2 {
+  border-left: 5px solid #555;
+  margin: 0 0 10px 10px;
+}
+ol.commentlist li.comment ul.children li.depth-3 {
+  border-left: 5px solid #999;
+  margin: 0 0 10px 10px;
+}
+ol.commentlist li.comment ul.children li.depth-4 {
+  border-left: 5px solid #bbb;
+  margin: 0 0 10px 10px;
+}
+ol.commentlist li.even {
+  background: #fff;
+}
+ol.commentlist li.odd {
+  background: #f6f6f6;
+}
+ol.commentlist li.parent {
+  border-left: 5px solid #111;
+}

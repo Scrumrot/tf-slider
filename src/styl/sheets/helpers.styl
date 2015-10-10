@@ -1,0 +1,748 @@
+// HELPERS
+
+@import '../base'
+@import '../settings'
+
+// $NON-SEMANTIC HELPER CLASSES
+
+// For image replacement
+
+.ir
+  display block
+  border 0
+  text-indent -999em
+  overflow hidden
+  background-color transparent
+  background-repeat no-repeat
+  text-align left
+  direction ltr
+  br
+    display none
+
+// Hide from both screenreaders and browsers: h5bp.com/u
+
+.hidden
+  display none !important
+  visibility hidden
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+
+.visuallyhidden
+  border 0
+  clip rect(0 0 0 0)
+  height 1px
+  margin -1px
+  overflow hidden
+  padding 0
+  position absolute
+  width 1px
+
+// Hide visually and from screenreaders, but maintain layout
+
+.invisible
+  visibility hidden
+
+// Contain floats: h5bp.com/q
+
+ul:before, ul:after,div:before, div:after,.clearfix:before, .clearfix:after
+  content ""
+  display table
+
+ul:after,div:after,.clearfix:after
+  clear both
+
+ul,div,.clearfix
+  *zoom 1
+
+#wpadminbar
+  ul
+    &:after
+      clear none
+
+// $POSTION
+.pos-s
+  position static
+.pos-a
+  position absolute
+
+.pos-r
+  position relative
+
+.pos-f
+  position fixed
+
+for unit in $topRightBottomLeftUnits
+	for i in range($topRightBottomLeftMin, $topRightBottomLeftMax, $topRightBottomLeftStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.top-{val}
+				top unit(i, unit)
+		else
+			.top-{val}-{unit}
+				top unit(i, unit)
+
+	for i in range($topRightBottomLeftMin, $topRightBottomLeftMax, $topRightBottomLeftStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.right-{val}
+				right unit(i,unit)
+		else
+			.right-{val}-{unit}
+				right unit(i,unit)
+
+	for i in range($topRightBottomLeftMin, $topRightBottomLeftMax, $topRightBottomLeftStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.bottom-{val}
+				bottom unit(i,unit)
+		else
+			.bottom-{val}-{unit}
+				bottom unit(i,unit)
+
+	for i in range($topRightBottomLeftMin, $topRightBottomLeftMax, $topRightBottomLeftStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.left-{val}
+				left unit(i,unit)
+		else
+			.left-{val}-{unit}
+				left unit(i,unit)
+
+// $FLOAT
+
+.f-l
+  float left
+
+.f-r
+  float right
+
+.f-n
+  float none
+
+
+// $OVERFLOW
+
+.of-a
+  overflow auto
+
+.of-h
+  overflow hidden
+
+.of-v
+  overflow visible
+
+
+// $CLEAR
+
+.cl-r
+  clear right
+
+.cl-l
+  clear left
+
+.cl-n
+  clear none
+
+
+// $DISPLAY
+
+.d-b
+  display block
+
+.d-n
+  display none
+
+.d-t
+  display table
+
+.d-ib
+  display inline-block
+
+.d-i
+  display inline
+
+
+// $VISIBILITY
+
+.vis-h
+  visibility hidden
+
+.vis-v
+  visibility visible
+
+
+// $HEIGHT
+
+for unit in $heightUnits
+	for i in range($heightMin, $heightMax, $heightStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.h-{val}
+				height unit(i,unit)
+		else
+			.h-{val}-{unit}
+				height unit(i,unit)
+
+for unit in $minHeightUnits
+	for i in range($minHeightMin, $minHeightMax, $minHeightStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.min-h-{val}
+				min-height unit(i,unit)
+		else
+			.min-h-{val}-{unit}
+				min-height unit(i,unit)
+
+
+for unit in $maxHeightUnits
+	for i in range($maxHeightMin, $maxHeightMax, $maxHeightStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.max-h-{val}
+				max-height unit(i,unit)
+		else
+			.max-h-{val}-{unit}
+				max-height unit(i,unit)
+
+// $WIDTH
+
+for unit in $widthUnits
+	for i in range($widthMin, $widthMax, $widthStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.w-{val}
+				width unit(i,unit)
+		else
+			.w-{val}-{unit}
+				width unit(i,unit)
+
+for unit in $minWidthUnits
+	for i in range($minWidthMin, $minWidthMax, $minWidthStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.min-w-{val}
+				min-width unit(i,unit)
+		else
+			.min-w-{val}-{unit}
+				min-width unit(i,unit)
+
+
+for unit in $maxWidthUnits
+	for i in range($maxWidthMin, $maxWidthMax, $maxWidthStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.max-w-{val}
+				max-width unit(i,unit)
+		else
+			.max-w-{val}-{unit}
+				max-width unit(i,unit)
+
+
+
+// $PADDING
+
+for unit in $paddingUnits
+	for i in range($paddingMin, $paddingMax, $paddingStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.p-{val}
+				padding unit(i,unit)
+		else
+			.p-{val}-{unit}
+				padding unit(i,unit)
+
+for unit in $paddingUnits
+	for i in range($paddingMin, $paddingMax, $paddingStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.p-tb-{val}
+        padding-top unit(i,unit)
+        padding-bottom unit(i,unit)
+		else
+			.p-tb-{val}-{unit}
+        padding-top unit(i,unit)
+        padding-bottom unit(i,unit)
+
+for unit in $paddingUnits
+	for i in range($paddingMin, $paddingMax, $paddingStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.p-lr-{val}
+        padding-left unit(i,unit)
+        padding-right unit(i,unit)
+		else
+			.p-lr-{val}-{unit}
+        padding-left unit(i,unit)
+        padding-right unit(i,unit)
+
+for unit in $paddingUnits
+	for i in range($paddingMin, $paddingMax, $paddingStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.p-t-{val}
+				padding-top unit(i,unit)
+		else
+			.p-t-{val}-{unit}
+				padding-top unit(i,unit)
+
+for unit in $paddingUnits
+	for i in range($paddingMin, $paddingMax, $paddingStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.p-r-{val}
+				padding-right unit(i,unit)
+		else
+			.p-r-{val}-{unit}
+				padding-right unit(i,unit)
+
+for unit in $paddingUnits
+	for i in range($paddingMin, $paddingMax, $paddingStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.p-b-{val}
+				padding-bottom unit(i,unit)
+		else
+			.p-b-{val}-{unit}
+				padding-bottom unit(i,unit)
+
+for unit in $paddingUnits
+	for i in range($paddingMin, $paddingMax, $paddingStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.p-l-{val}
+				padding-left unit(i,unit)
+		else
+			.p-l-{val}-{unit}
+				padding-left unit(i,unit)
+
+// $MARGIN
+
+for unit in $marginUnits
+	for i in range($marginMin, $marginMax, $marginStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.m-{val}
+				margin unit(i,unit)
+		else
+			.m-{val}-{unit}
+				margin unit(i,unit)
+
+for unit in $marginUnits
+	for i in range($marginMin, $marginMax, $marginStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.m-tb-{val}
+        margin-top unit(i,unit)
+        margin-bottom unit(i,unit)
+		else
+			.m-tb-{val}-{unit}
+        margin-top unit(i,unit)
+        margin-bottom unit(i,unit)
+.m-0
+	margin 0
+.m-lr-0
+	margin-left 0
+	margin-right 0
+.m-tb-0
+	margin-top 0
+	margin-bottom 0
+.m-l-0
+	margin-left 0
+.m-r-0
+	margin-right 0
+.m-t-0
+	margin-top 0
+.m-b-0
+	margin-bottom 0
+
+.m-lr-auto, .center
+  	margin-left auto
+  	margin-right auto
+
+for unit in $marginUnits
+	for i in range($marginMin, $marginMax, $marginStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.m-lr-{val}
+				margin-left unit(i,unit)
+        margin-right unit(i,unit)
+		else
+			.m-lr-{val}-{unit}
+        margin-left unit(i,unit)
+        margin-right unit(i,unit)
+
+for unit in $marginUnits
+	for i in range($marginMin, $marginMax, $marginStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.m-t-{val}
+				margin-top unit(i,unit)
+		else
+			.m-t-{val}-{unit}
+				margin-top unit(i,unit)
+
+for unit in $marginUnits
+	for i in range($marginMin, $marginMax, $marginStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.m-r-{val}
+				margin-right unit(i,unit)
+		else
+			.m-r-{val}-{unit}
+				margin-right unit(i,unit)
+
+for unit in $marginUnits
+	for i in range($marginMin, $marginMax, $marginStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.m-b-{val}
+				margin-bottom unit(i,unit)
+		else
+			.m-b-{val}-{unit}
+				margin-bottom unit(i,unit)
+
+for unit in $marginUnits
+	for i in range($marginMin, $marginMax, $marginStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.m-l-{val}
+				margin-left unit(i,unit)
+		else
+			.m-l-{val}-{unit}
+				margin-left unit(i,unit)
+
+// $COLORS
+
+for c in $colors
+	.c-{c[0]}
+		color c[1]
+
+// $BACKGROUND
+
+for bg in $colors
+  .bg-{bg[0]}
+    background-color bg[1]
+
+// $BOXSHADOWS
+
+for bs in $colors
+  .bs-{bs[0]}
+    box-shadow 0px 0px 0px 1px bs[1]
+
+for bsT in $colors
+  .bs-t-{bsT[0]}
+    box-shadow 0px -1px 0px 0px bsT[1]
+
+for bsL in $colors
+  .bs-l-{bsL[0]}
+    box-shadow -1px 0px 0px 0px bsL[1]
+
+for bsB in $colors
+  .bs-b-{bsB[0]}
+    box-shadow 0px 1px 0px 0px bsB[1]
+
+for bsR in $colors
+  .bs-r-{bsR[0]}
+    box-shadow 1px 0px 0px 0px bsR[1]
+
+.bs-n
+  box-shadow none
+// $BORDER
+
+for bor in $colors
+  .b-{bor[0]}
+    border 1px solid bor[1]
+
+for borT in $colors
+  .b-t-{borT[0]}
+    border-top 1px solid borT[1]
+
+for borR in $colors
+  .b-r-{borR[0]}
+    border-right 1px solid borR[1]
+
+for borB in $colors
+  .b-b-{borB[0]}
+    border-bottom 1px solid borB[1]
+
+for borL in $colors
+  .b-l-{borL[0]}
+    border-left 1px solid borL[1]
+
+for unit in $borderRadiusUnits
+	for i in range($borderRadiusMin, $borderRadiusMax, $borderRadiusStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.br-{val}
+				border-radius unit(i,unit)
+		else
+			.br-{val}-{unit}
+				border-radius unit(i,unit)
+
+for unit in $borderRadiusUnits
+	for i in range($borderRadiusMin, $borderRadiusMax, $borderRadiusStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.br-t-{val}
+				border-top-left-radius unit(i,unit)
+				border-top-right-radius unit(i,unit)
+		else
+			.br-t-{val}-{unit}
+				border-top-left-radius unit(i,unit)
+				border-top-right-radius unit(i,unit)
+
+for unit in $borderRadiusUnits
+	for i in range($borderRadiusMin, $borderRadiusMax, $borderRadiusStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.br-r-{val}
+				border-top-right-radius unit(i,unit)
+				border-bottom-right-radius unit(i,unit)
+		else
+			.br-r-{val}-{unit}
+				border-top-right-radius unit(i,unit)
+				border-bottom-right-radius unit(i,unit)
+
+for unit in $borderRadiusUnits
+	for i in range($borderRadiusMin, $borderRadiusMax, $borderRadiusStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.br-b-{val}
+				border-bottom-left-radius unit(i,unit)
+				border-bottom-right-radius unit(i,unit)
+		else
+			.br-b-{val}-{unit}
+				border-bottom-left-radius unit(i,unit)
+				border-bottom-right-radius unit(i,unit)
+
+for unit in $borderRadiusUnits
+	for i in range($borderRadiusMin, $borderRadiusMax, $borderRadiusStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.br-l-{val}
+				border-top-left-radius unit(i,unit)
+				border-bottom-left-radius unit(i,unit)
+		else
+			.br-l-{val}-{unit}
+				border-top-left-radius unit(i,unit)
+				border-bottom-left-radius unit(i,unit)
+
+for unit in $borderRadiusUnits
+	for i in range($borderRadiusMin, $borderRadiusMax, $borderRadiusStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.br-tl-{val}
+				border-top-left-radius unit(i,unit)
+		else
+			.br-tl-{val}-{unit}
+				border-top-left-radius unit(i,unit)
+
+for unit in $borderRadiusUnits
+	for i in range($borderRadiusMin, $borderRadiusMax, $borderRadiusStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.br-tr-{val}
+				border-top-right-radius unit(i,unit)
+		else
+			.br-tr-{val}-{unit}
+				border-top-right-radius unit(i,unit)
+
+for unit in $borderWidthUnits
+	for i in range($borderWidthMin, $borderWidthMax, $borderWidthStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.bw-{val}
+				border-width unit(i,unit)
+		else
+			.bw-{val}-{unit}
+        border-width unit(i,unit)
+
+// $OPACITY
+
+for i in range($opacityMin, $opacityMax, $opacityStep)
+	val = getClassName(i)
+	.o-{val}
+		opacity i
+
+.o-1
+  opacity 1
+
+// $FONT
+
+// for ff in $fonts
+//   if ff[0] == 'cdn'
+//     .ff-{ff[1][0]}
+//       font-family ff[2]
+//   else
+//     @font-face
+//   		if ff[0]
+//       	font-family ff[0]
+//   		if ff[1]
+//       	src ff[1] ff[2]
+//   		if ff[3]
+//       	font-style ff[3]
+//   		if ff[4]
+//       	font-weight ff[4]
+//   		if ff[5][0]
+//       	text-rendering ff[5]
+
+//     .ff-{ff[0][0]}
+//       font-family ff[0]
+
+// .ff-{$fonts[0][1]}
+// 	font-family $fonts[0][0]
+// .ff-{$fonts[1][1]}
+// 	font-family $fonts[1][0]
+
+// .ff-{$fonts[2][1]}
+// 	font-family $fonts[2][0]
+
+// .ff-{$fonts[3][1]}
+// 	font-family $fonts[3][0]
+// .ff-{$fonts[4][1]}
+// 	font-family $fonts[4][0]
+// .ff-{$fonts[5][1]}
+// 	font-family $fonts[5][0]
+// .ff-{$fonts[6][1]}
+// 	font-family $fonts[6][0]
+// $FONTSIZE
+
+for unit in $fontSizeUnits
+	for i in range($fontSizeMin, $fontSizeMax, $fontSizeStep)
+		val = getClassName(i)
+		if (unit == '%')
+			.fs-{val}
+				font-size unit(i,unit)
+		else
+			.fs-{val}-{unit}
+				font-size unit(i,unit)
+
+
+// $FONTWEIGHT
+
+.fw-l
+  font-weight lighter
+
+.fw-n
+  font-weight normal
+
+.fw-b
+  font-weight bold
+
+.fw-ber
+  font-weight bolder
+
+for fw in $fontWeights
+  .fw-{fw}
+    font-weight fw
+
+// $LINEHEIGHT
+
+for i in range($lineHeightMin, $lineHeightMax, $lineHeightStep)
+	val = getClassName(i)
+	.lh-{val}
+		line-height i
+
+// $TEXTALIGN
+
+.ta-c
+	text-align center
+
+.ta-r
+	text-align right
+
+// $TEXTSHADOW
+
+.ts-w
+	text-shadow 1px 1px #ffffff;
+
+.ts-b
+	text-shadow 1px 1px #000000;
+
+// $TEXTTRANSFORM
+
+.tt-u
+  text-transform uppercase
+
+// $VERTICALALIGN
+
+.va-t
+	vertical-align top
+
+.va-m
+	vertical-align middle
+
+.va-b
+	vertical-align bottom
+
+// $CURSOR
+
+.cur-p
+	cursor pointer
+
+.cur-z-i
+	cursor zoom-in
+
+.cur-z-o
+	cursor zoom-out
+
+// $Z-INDEX
+
+for zi in range($zMin, $zMax, $zStep)
+	val = getClassName(zi)
+	.zi-{val}
+		z-index zi
+
+// $TRANSITION
+
+.trans-all-1
+  transition all .1s ease
+
+.trans-all-2
+  transition all .2s ease
+
+.trans-all-3
+  transition all .3s ease
+
+.trans-all-4
+  transition all .4s ease
+
+.trans-all-5
+  transition all .5s ease
+
+.trans-bgc-1
+  transition background .1s ease
+
+.trans-bgc-2
+  transition background .2s ease
+
+.trans-bgc-3
+  transition background .3s ease
+
+.trans-bgc-4
+  transition background .4s ease
+
+.trans-bgc-5
+  transition background .5s ease
+
+.trans-c-2
+  transition background-color .2s ease-in-out
+
+// $HOVER
+
+for hovC in $colors
+  .hov-c-{hovC[0]}:hover
+    color hovC[1]
+
+for hovBg in $colors
+  .hov-bg-{hovBg[0]}:hover
+    background-color hovBg[1]
+
+for hovBs in $colors
+  .hov-bs-{hovBs[0]}:hover
+    box-shadow 0px 0px 0px 1px hovBs[1]
+
+// $CURSOR
+
+.cursor-p
+  cursor pointer

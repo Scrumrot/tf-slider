@@ -1,0 +1,114 @@
+// $SETTINGS
+
+@import base
+
+// $FONTSIZE
+
+$fontSizeMin = .5;
+$fontSizeMax = 3;
+$fontSizeStep = .25;
+$fontSizeUnits = 'em';
+
+// $LINEHEIGHT
+
+$lineHeightMin = .5;
+$lineHeightMax = 3;
+$lineHeightStep = .25;
+
+// $GRID
+
+$gridMin = 0;
+$gridMax = 100;
+$gridStep = 1;
+$container = $containerWidth;
+
+// $PADDING
+
+$paddingMin = 0;
+$paddingMax = 110;
+$paddingStep = .5;
+$paddingUnits = ('%' 'px' 'em');
+
+// $MARGIN
+
+$marginMin = 0;
+$marginMax = 100;
+$marginStep = .5;
+$marginUnits = ('%' 'px' 'em');
+
+// $POSITION
+
+$topRightBottomLeftMin = 0;
+$topRightBottomLeftMax = 100;
+$topRightBottomLeftStep = 1;
+$topRightBottomLeftUnits = ('%' 'px' 'em');
+
+// $HEIGHT $MIN $MAX
+
+$heightMin = 0;
+$heightMax = 100;
+$heightStep = 10;
+$heightUnits = ('%' 'em' 'px');
+
+$minHeightMin = 0;
+$minHeightMax = 100;
+$minHeightStep = 10;
+$minHeightUnits = ('%' 'em' 'px');
+
+$maxHeightMin = 0;
+$maxHeightMax = 100;
+$maxHeightStep = 10;
+$maxHeightUnits = ('%' 'em' 'px');
+
+// $WIDTH $MIN $MAX
+
+$widthMin = 0;
+$widthMax = 100;
+$widthStep = 1;
+$widthUnits = ('%' 'em' 'px');
+
+$minWidthMin = 0;
+$minWidthMax = 100;
+$minWidthStep = 10;
+$minWidthUnits = ('%' 'em' 'px');
+
+$maxWidthMin = 0;
+$maxWidthMax = 100;
+$maxWidthStep = 10;
+$maxWidthUnits = ('%' 'em' 'px');
+
+// $OPACITY
+
+$opacityMin = 0;
+$opacityMax = 1;
+$opacityStep = 0.1;
+
+// $BORDERRADIUS
+
+$borderRadiusMin = 0;
+$borderRadiusMax = 50;
+$borderRadiusStep = 1;
+$borderRadiusUnits = ('%' 'px' 'em');
+
+// $BORDERWIDTH
+
+$borderWidthMin = 0;
+$borderWidthMax = 10;
+$borderWidthStep = 1;
+$borderWidthUnits = ('%' 'px' 'em');
+
+// $Z-INDEX
+
+$zMin = 0;
+$zMax = 10;
+$zStep = 1;
+
+// Return Decimal ClassName
+
+getClassName(val)
+	floor = floor(val)
+	remainder = round((val - floor) * 100)
+	if remainder > 0
+		join('_', floor, remainder)
+	else
+		floor

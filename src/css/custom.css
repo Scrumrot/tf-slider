@@ -1,0 +1,88 @@
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0px auto;
+  background-color: #fff;
+  z-index: 20;
+}
+.grab {
+  transition: box-shadow 0.4s ease-in-out;
+  box-shadow: 0px 0px 0px 0px rgba(69,69,69,0.8), 0 0px 0px 0px #297dbc;
+}
+.fix-bs {
+  box-shadow: 0px -17px 22px 19px rgba(69,69,69,0.8), 0 3px 3px -1px #6785c3;
+}
+.bs-fix {
+  box-shadow: 0px -17px 22px 19px rgba(69,69,69,0.8), 0 3px 3px -1px #6785c3;
+}
+.mask {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 18;
+  width: 100%;
+  height: 0;
+  background: #fff;
+}
+.fa-chevron-right.center-all-abs {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-43%, -45%);
+}
+.fa-chevron-left.center-all-abs {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-57%, -45%);
+}
+figure img {
+  height: auto;
+}
+.h-underline {
+  box-shadow: 0 1px 0 0 #dbdbdb;
+  display: block;
+  height: 1px;
+  width: 300px;
+}
+.h-underline-score {
+  background-color: #2f3e46;
+  display: block;
+  width: 30px;
+  height: 3px;
+  position: relative;
+  margin: 0px auto;
+}
+.focus-outline-n:focus {
+  outline: none;
+}
+.w-auto {
+  width: auto;
+}
+.h-110 {
+  height: 100%;
+}
+.m-t--5 {
+  margin-top: -5%;
+}
+.m-t--10 {
+  margin-top: -10%;
+}
+.pointer-events-a {
+  pointer-events: all;
+}
+.pointer-events-n {
+  pointer-events: none;
+}
+.font-style-i {
+  font-style: italic;
+}
+@media only screen and (max-width: 1024px) {
+  .mq1-left-10 {
+    left: 10%;
+  }
+}

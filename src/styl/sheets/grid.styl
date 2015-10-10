@@ -1,0 +1,17 @@
+// GRID
+
+@import '../base'
+@import '../settings'
+
+for i in range($gridMin, $gridMax, $gridStep)
+	.grid-{i}
+		float left
+		display block
+		width i+'%'
+		height auto
+
+.grid-full
+	width $wrapperWidth + '%'
+
+// .grid-max
+// 	width $containerWidth + '%'
