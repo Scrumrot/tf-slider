@@ -1,0 +1,214 @@
+// $SPECIAL
+
+@import 'base.styl'
+@import 'settings.styl'
+
+// Container
+
+.container
+	position relative
+	margin 0 auto
+	width $containerWidth+'%'
+	max-width 1344px
+.grid-max
+	max-width 1344px
+.grid-max-full
+	max-width 1920px
+
+.sidebarTemplate_container-100 .container
+	position relative
+	margin 0 auto
+	width 100%
+// Vertical Align
+
+.vert-center
+	min-height 10em
+	display table-cell
+	vertical-align middle
+
+.vert-center-rel
+	height 10em
+	position relative
+
+.vert-center-abs
+	margin 0
+	position absolute
+	top 50%
+	transform translate(0, -50%)
+.center-all-abs
+	margin 0
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%, -50%)
+
+// Menues
+
+.mobile-menu
+	display none
+
+.inline-menu-30-px li
+	float left
+	margin-right 30px
+	&:last-child
+		margin-right 0
+
+.inline-menu-10-px li
+	float left
+	margin-right 10px
+	&:last-child
+		margin-right 0
+
+// DEPENDANCY Icon Color
+
+for iconColor in $colors
+	.i_c-{iconColor[0]} i
+		color iconColor[1]
+
+// DEPENDANCY Link Color
+
+for linkColor in $colors
+	.a_c-{linkColor[0]} a
+		color linkColor[1]
+
+// Position
+
+.center
+	display table
+	position relative
+	margin 0 auto
+
+.right--10
+	right -10%
+
+.left--10
+	left -10%
+
+.mq0-left-0
+	left 0
+
+.mq0-right-0
+	right 0
+
+// Text Shadow
+
+.ts-gray-60
+	text-shadow 1px 1px $gray-60
+
+// background
+	.bg-blue-50-0_5
+		background rgba($blue-50, .5)
+
+
+// Form Dependacy classes
+
+.i_grid-100 input
+	width 100%
+
+
+.i_p-4 input
+	padding 4%
+
+
+.i_m-b-1-em input
+	margin-bottom 1em
+
+
+.i_bor-gray-50 input
+	border 1px solid $gray-50
+
+
+.b_center button
+	position relative
+	margin 0 auto
+
+.b_m-t-1-em button
+	margin-top 1em
+
+.b_w-50 button
+	width 50%
+
+// Dependancy border class
+
+.fig_hov-bs-orange-50:hover figure
+	box-shadow 0 0 0 2px $orange-50
+
+//box/columns
+.two-box {
+    width: 49%;
+    height: auto;
+    display: block;
+    float: left;
+    margin-right:1%;
+}
+.two-box:nth-of-type(2n+2) {
+    margin-left: 1%;
+    margin-right:0;
+}
+.three-box {
+    width: 32%;
+    height: auto;
+    display: block;
+    float: left;
+}
+.three-box:nth-of-type(3n+2) {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.four-box {
+    width: 23.5%;
+    height: auto;
+    display: block;
+    float: left;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+.four-box:nth-of-type(4n+2){margin-left: 0;}
+.four-box:nth-of-type(4n+5){ margin-right: 0;}
+
+// Media Queries
+
+@media only screen and ( max-width: $mq1 )
+
+	.container
+		width 100%
+		padding 0 5%
+
+	.mq1-vert-center-none
+		margin 0
+		position relative
+		top 0
+		transform none
+
+	.mq1-vert-center-abs
+		margin 0
+		position absolute
+		top 50%
+		transform translate(0, -50%)
+
+	.mq1-right-0
+		right 0
+
+	.mq1-left-0
+		left 0
+
+	.mq1-left-8_5
+		left 8.5%
+
+	.mq1-right-1_8
+		right 1.8%
+
+	.mq1-m-l--5
+		margin-left -5%
+
+@media only screen and ( max-width: $mq2 )
+
+	.mq2-left-5
+		left 5%
+
+	.mq2-right-5
+		right 5%
+
+@media only screen and ( max-width: $mq3 )
+	//

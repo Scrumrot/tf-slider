@@ -1,0 +1,750 @@
+// MEDIAQUERIES
+
+@import 'base.styl'
+@import 'settings.styl'
+
+
+// MQ1
+
+@media only screen and ( max-width: $mq1 )
+	.four-box
+		width 48%
+	.four-box:nth-of-type(4n+2)
+	  margin 0 2% 0 0
+	.four-box:nth-of-type(4n+3)
+	  margin 0 0 0 2%
+	.four-box:nth-of-type(4n+4)
+	  margin 2% 2% 0 0
+	.four-box:nth-of-type(4n+5)
+	  margin 2% 0 0 2%
+
+	.mq1-left-10
+		left 10%
+
+	// GRID
+
+	for i in range($gridMin, $gridMax, $gridStep)
+		.mq1.grid-{i}
+			float left
+			width 100%
+
+	// WIDTH
+
+	for i in range($gridMin, $gridMax, $gridStep)
+		.mq1-grid-{i}
+			width i+'%'
+
+	// PADDING
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-p-{val}
+					padding i+unit
+			else
+				.mq1-p-{val}-{unit}
+					padding i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-p-tb-{val}
+					padding-top i+unit
+					padding-bottom i+unit
+			else
+				.mq1-p-tb-{val}-{unit}
+					padding-top i+unit
+					padding-bottom i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-p-lr-{val}
+					padding-left i+unit
+					padding-right i+unit
+			else
+				.mq1-p-lr-{val}-{unit}
+					padding-left i+unit
+					padding-right i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-p-t-{val}
+					padding-top i+unit
+			else
+				.mq1-p-t-{val}-{unit}
+					padding-top i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-p-r-{val}
+					padding-right i+unit
+			else
+				.mq1-p-r-{val}-{unit}
+					padding-right i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-p-b-{val}
+					padding-bottom i+unit
+			else
+				.mq1-p-b-{val}-{unit}
+					padding-bottom i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-p-l-{val}
+					padding-left i+unit
+			else
+				.mq1-p-l-{val}-{unit}
+					padding-left i+unit
+
+	// MARGIN
+
+	.mq1-m-lr-auto
+		margin-right auto
+		margin-left auto
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-m-{val}
+					margin i+unit
+			else
+				.mq1-m-{val}-{unit}
+					margin i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-m-tb-{val}
+					margin-top i+unit
+					margin-bottom i+unit
+			else
+				.mq1-m-tb-{val}-{unit}
+					margin-top i+unit
+					margin-bottom i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-m-lr-{val}
+					margin-left i+unit
+					margin-right i+unit
+			else
+				.mq1-m-lr-{val}-{unit}
+					margin-left i+unit
+					margin-right i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-m-t-{val}
+					margin-top i+unit
+			else
+				.mq1-m-t-{val}-{unit}
+					margin-top i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-m-r-{val}
+					margin-right i+unit
+			else
+				.mq1-m-r-{val}-{unit}
+					margin-right i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-m-b-{val}
+					margin-bottom i+unit
+			else
+				.mq1-m-b-{val}-{unit}
+					margin-bottom i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq1-m-l-{val}
+					margin-left i+unit
+			else
+				.mq1-m-l-{val}-{unit}
+					margin-left i+unit
+
+	// DISPLAY
+
+	.mq1-d-n
+		display none
+
+	.mq1-d-b
+		display block
+
+	// TEXTALIGN
+
+	.mq1-ta-l
+		text-align left
+
+	.mq1-ta-c
+		text-align center
+
+	.mq1-ta-r
+		text-align right
+
+	// POSITION
+
+	.mq1-pos-s
+		position static
+
+	.mq1-f-n
+		float none
+	.mq1-h-auto
+		height auto
+// MQ2
+
+@media only screen and ( max-width: $mq2 )
+
+	.two-box
+		width 100%
+		height auto
+		display block
+		float left
+		margin-left 0
+		margin-right 0
+
+	.two-box:nth-of-type(2n+2)
+		margin-top 4%
+		margin-left 0
+		margin-right 0
+
+	.three-box
+		width 100%
+		margin 0 auto
+
+	 .three-box:nth-of-type(3n+2)
+		margin 4% auto
+
+	// GRID
+
+	for i in range($gridMin, $gridMax, $gridStep)
+		.mq2.grid-{i}
+			float left
+			width 100%
+
+	// WIDTH
+
+	for i in range($gridMin, $gridMax, $gridStep)
+		.mq2-w-{i}
+			width i+'%'
+
+	// PADDING
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-p-{val}
+					padding i+unit
+			else
+				.mq2-p-{val}-{unit}
+					padding i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-p-tb-{val}
+					padding-top i+unit
+					padding-bottom i+unit
+			else
+				.mq2-p-tb-{val}-{unit}
+					padding-top i+unit
+					padding-bottom i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-p-lr-{val}
+					padding-left i+unit
+					padding-right i+unit
+			else
+				.mq2-p-lr-{val}-{unit}
+					padding-left i+unit
+					padding-right i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-p-t-{val}
+					padding-top i+unit
+			else
+				.mq2-p-t-{val}-{unit}
+					padding-top i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-p-r-{val}
+					padding-right i+unit
+			else
+				.mq2-p-r-{val}-{unit}
+					padding-right i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-p-b-{val}
+					padding-bottom i+unit
+			else
+				.mq2-p-b-{val}-{unit}
+					padding-bottom i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-p-l-{val}
+					padding-left i+unit
+			else
+				.mq2-p-l-{val}-{unit}
+					padding-left i+unit
+
+	// MARGIN
+
+	.mq2-m-lr-auto
+		margin-right auto
+		margin-left auto
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-m-{val}
+					margin i+unit
+			else
+				.mq2-m-{val}-{unit}
+					margin i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-m-tb-{val}
+					margin-top i+unit
+					margin-bottom i+unit
+			else
+				.mq2-m-tb-{val}-{unit}
+					margin-top i+unit
+					margin-bottom i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-m-lr-{val}
+					margin-left i+unit
+					margin-right i+unit
+			else
+				.mq2-m-lr-{val}-{unit}
+					margin-left i+unit
+					margin-right i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-m-t-{val}
+					margin-top i+unit
+			else
+				.mq2-m-t-{val}-{unit}
+					margin-top i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-m-r-{val}
+					margin-right i+unit
+			else
+				.mq2-m-r-{val}-{unit}
+					margin-right i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-m-b-{val}
+					margin-bottom i+unit
+			else
+				.mq2-m-b-{val}-{unit}
+					margin-bottom i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq2-m-l-{val}
+					margin-left i+unit
+			else
+				.mq2-m-l-{val}-{unit}
+					margin-left i+unit
+
+	// DISPLAY
+
+	.mq2-d-n
+		display none
+
+	.mq2-d-b
+		display block
+
+	// TEXTALIGN
+
+	.mq2-ta-l
+		text-align left
+
+	.mq2-ta-c
+		text-align center
+
+	.mq2-ta-r
+		text-align right
+
+	// POSITION
+
+	.mq2-pos-s
+		position static
+
+	.mq2-f-n
+		float none
+
+	.mq3-h-auto
+		height auto
+	.mq2-table-center
+		float none
+		display table
+		margin 0 auto
+	#footer_menu li
+		border-right 0px solid #008755
+		border-bottom 1px solid #008755
+		padding 0
+		display block
+		width 100%
+	#footer_menu li a
+		display block
+		padding 2.5% 0
+	.js-slideSearch
+		font-size 1em
+		height 2.6em
+// MQ3
+
+@media only screen and ( max-width: $mq3 )
+
+	.four-box:nth-of-type(4n+2),.four-box:nth-of-type(4n+3),.four-box:nth-of-type(4n+4),.four-box:nth-of-type(4n+5)
+		width 100%
+		margin 0 auto 4% auto
+		padding 0
+
+	// GRID
+
+	for i in range($gridMin, $gridMax, $gridStep)
+		.mq3.grid-{i}
+			float left
+			width 100%
+
+	// WIDTH
+
+	for i in range($gridMin, $gridMax, $gridStep)
+		.mq3-w-{i}
+			width i+'%'
+
+	// PADDING
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-p-{val}
+					padding i+unit
+			else
+				.mq3-p-{val}-{unit}
+					padding i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-p-tb-{val}
+					padding-top i+unit
+					padding-bottom i+unit
+			else
+				.mq3-p-tb-{val}-{unit}
+					padding-top i+unit
+					padding-bottom i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-p-lr-{val}
+					padding-left i+unit
+					padding-right i+unit
+			else
+				.mq3-p-lr-{val}-{unit}
+					padding-left i+unit
+					padding-right i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-p-t-{val}
+					padding-top i+unit
+			else
+				.mq3-p-t-{val}-{unit}
+					padding-top i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-p-r-{val}
+					padding-right i+unit
+			else
+				.mq3-p-r-{val}-{unit}
+					padding-right i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-p-b-{val}
+					padding-bottom i+unit
+			else
+				.mq3-p-b-{val}-{unit}
+					padding-bottom i+unit
+
+	for unit in $paddingUnits
+		for i in range($paddingMin, $paddingMax, $paddingStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-p-l-{val}
+					padding-left i+unit
+			else
+				.mq3-p-l-{val}-{unit}
+					padding-left i+unit
+
+	// MARGIN
+
+	.mq3-m-lr-auto
+		margin-right auto
+		margin-left auto
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-m-{val}
+					margin i+unit
+			else
+				.mq3-m-{val}-{unit}
+					margin i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-m-tb-{val}
+					margin-top i+unit
+					margin-bottom i+unit
+			else
+				.mq3-m-tb-{val}-{unit}
+					margin-top i+unit
+					margin-bottom i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-m-lr-{val}
+					margin-left i+unit
+					margin-right i+unit
+			else
+				.mq3-m-lr-{val}-{unit}
+					margin-left i+unit
+					margin-right i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-m-t-{val}
+					margin-top i+unit
+			else
+				.mq3-m-t-{val}-{unit}
+					margin-top i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-m-r-{val}
+					margin-right i+unit
+			else
+				.mq3-m-r-{val}-{unit}
+					margin-right i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-m-b-{val}
+					margin-bottom i+unit
+			else
+				.mq3-m-b-{val}-{unit}
+					margin-bottom i+unit
+
+	for unit in $marginUnits
+		for i in range($marginMin, $marginMax, $marginStep)
+			val = getClassName(i)
+			if unit = '%'
+				.mq3-m-l-{val}
+					margin-left i+unit
+			else
+				.mq3-m-l-{val}-{unit}
+					margin-left i+unit
+
+	// DISPLAY
+
+	.mq3-d-n
+		display none
+
+	.mq3-d-b
+		display block
+
+	// TEXTALIGN
+
+	.mq3-ta-l
+		text-align left
+
+	.mq3-ta-c
+		text-align center
+
+	.mq3-ta-r
+		text-align right
+
+	// POSITION
+
+	.mq3-pos-s
+		position static
+
+	.mq3-f-n
+		float none
+
+	.mq1-h-auto
+		height auto
+
+// PRINT MEDIA
+
+@media print
+
+	.do-not-print
+		display none
+
+	#comments
+		page-break-before always
+
+	body
+		width 100% !important
+		margin 0 !important
+		padding 0 !important
+		line-height 1.4
+		word-spacing 1.1pt
+		letter-spacing 0.2pt
+		font-family Garamond, "Times New Roman", serif
+		color #000
+		background none
+		font-size 12pt
+
+	h1, h2, h3, h4, h5, h6
+		font-family Helvetica, Arial, sans-serif
+
+	h1
+		font-size 19pt
+
+	h2
+		font-size 17pt
+
+	h3
+		font-size 15pt
+
+	h4, h5, h6
+		font-size 12pt
+
+	code
+		font 10pt Courier, monospace
+
+	blockquote
+		margin 1.3em
+		padding 1em
+
+	img
+		display block
+		margin 1em 0
+
+	a
+		text-decoration none
+		color black
+		img
+			border none
+
+	table
+		margin 1px
+		text-align left
+
+	th
+		border-bottom 1px solid #333
+		font-weight bold
+
+	td
+		border-bottom 1px solid #333
+
+	th, td
+		padding 4px 10px 4px 0
+
+	caption
+		background #fff
+		margin-bottom 2em
+		text-align left
+
+	thead
+		display table-header-group
+
+	tr
+		page-break-inside avoid
+
+@media only screen and ( min-width: 1920px )
+	.grid-max-full
+		float none
+		margin-left auto
+		margin-right auto

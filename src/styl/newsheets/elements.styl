@@ -1,0 +1,252 @@
+// ELEMENTS
+
+@import 'base.styl'
+@import 'settings.styl'
+
+
+// $GLOBAL
+
+html
+  background-color transparent
+
+body
+  background-color $bodyBkg
+  font-size $bodyFontSize
+  line-height $bodyLineHeight
+  font-weight $bodyFontWeight
+  position relative
+  height 100%
+  width 100%
+  overflow hidden
+body, button, input, select, textarea
+  font-family $bodyFont
+  color $bodyFontColor
+
+::selection
+  text-shadow none
+  background-color highlight
+  color highlighttext
+
+body, div, section, header,figure,span,strong,i,em, footer, main, nav, img, p, button, input, select, textarea, a,li,ul,button
+  box-sizing border-box
+
+// $TYPOGRAPHY
+
+p
+  font-size 1em
+  margin $pMargin
+
+abbr[title]
+  border-bottom 1px dotted
+
+b, strong
+  font-size 1em
+  font-weight bold
+  font-family $strongFont
+
+blockquote
+  font-size 1em
+  margin 1em 40px
+
+dfn
+  font-size 1em
+  font-style italic
+
+hr
+  display block
+  height 1px
+  border 0
+  border-top 1px solid #ccc
+  margin 1em 0
+  padding 0
+
+ins
+  background $insBkg
+  color $insFontColor
+  text-decoration none
+
+mark
+  background $markBkg
+  color $markFontColor
+  font-style italic
+  font-weight bold
+
+pre, code, kbd, samp
+  font-family monospace, serif
+  font-family 'courier new', monospace
+  font-size 1em
+
+pre
+  white-space pre
+  white-space pre-wrap
+  word-wrap break-word
+
+q
+  font-size 1em
+  quotes none
+
+q:before, q:after
+  content ""
+  content none
+
+small
+  font-size .85em
+
+sub, sup
+  font-size 75%
+  line-height 0
+  position relative
+  vertical-align baseline
+
+sup
+  top -0.5em
+
+sub
+  bottom -0.25em
+
+// $HEADERS
+
+h1, h2, h3, h4, h5, h6
+  line-height 1.45
+  color $bodyFontColor
+  margin $headerMargin
+
+h1
+  font-size $h1FontSize
+  font-weight $h1FontWeight
+  font-family $h1Font
+  color $h1FontColor
+
+h2
+  font-size $h2FontSize
+  font-weight $h2FontWeight
+  font-family $h2Font
+  color $h2FontColor
+
+h3
+  font-size $h3FontSize
+  font-weight $h3FontWeight
+  font-family $h3Font
+  color $h3FontColor
+
+h4
+  font-size $h4FontSize
+  font-weight $h4FontWeight
+  font-family $h4Font
+  color $h4FontColor
+
+// $UL $LISTS
+
+ul, ol
+  margin $listMargin
+  padding $listPadding
+
+dd
+  margin 0 0 0 40px
+
+nav ul, nav ol
+  list-style none
+  list-style-image none
+  margin 0
+  padding 0
+
+// $A $LINKS
+
+a
+  font-size 1em
+  color $aColor
+  text-decoration $aDecortion
+  &:hover
+    color $aHoverColor
+  &:focus
+    outline thin dotted
+
+a:hover, a:active
+  outline 0
+
+// $BUTTONS
+
+input[type=button]
+  font-size 1em
+  background-color #f16522
+  box-shadow 0px 2px 0px #d34d0d
+  border-radius 4px
+  font inherit
+  letter-spacing inherit
+  text-indent inherit
+  color inherit
+
+input[type=button]:hover
+  background-color #f16522
+
+input[type=button]:active
+  background-color #d2d6d6
+  border 1px solid #9daca9
+  box-shadow inset 0 1px rgba(0, 0, 0, 0.1)
+
+// $ELEMENTS
+
+header, main, footer, section
+  width 100%
+  height auto
+  display block
+  float left
+  background-color transparent
+
+header, main, footer,main section
+  opacity 1
+// $COMMENTS
+
+blockquote
+  width 90%
+  background #f3f5fa
+  margin-left 7%
+  padding 3%
+  box-shadow -4px 0px 0px 0px #297dbc
+  p
+    color #297dbc
+
+ol
+  &.commentlist
+    list-style none
+    li
+      &.comment
+        border-bottom 1px dotted #666
+        padding 10px
+        div
+          &.vcard
+            cite
+              &.fn
+                font-style normal
+            img
+              &.avatar
+                float right
+                margin 0 0 10px 10px
+          &.comment-meta
+            font-size 10px
+            a
+              color #ccc
+          &.reply
+            font-size 11px
+            a
+              font-weight bold
+        ul
+          &.children
+            list-style none
+            margin 10px 0 0
+            li
+              &.depth-2
+                border-left 5px solid #555
+                margin 0 0 10px 10px
+              &.depth-3
+                border-left 5px solid #999
+                margin 0 0 10px 10px
+              &.depth-4
+                border-left 5px solid #bbb
+                margin 0 0 10px 10px
+      &.even
+        background #fff
+      &.odd
+        background #f6f6f6
+      &.parent
+        border-left 5px solid #111
